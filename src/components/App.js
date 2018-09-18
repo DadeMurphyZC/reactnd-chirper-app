@@ -1,21 +1,31 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
+import React, {Component} from 'react'
+import {connect} from 'react-redux'
 import { handleInitialData } from "../actions/shared"
+import Dashboard from './Dashboard.js'
 
 
 class App extends Component {
 
-    componentDidMount(){
+    componentDidMount() {
         this.props.dispatch(handleInitialData())
     }
 
-  render() {
-    return (
-      <div>
-        Starter Code
-      </div>
-    )
-  }
+    render() {
+        return (
+            <div>
+                {this.props.loading===true
+                ? null
+                : <Dashboard/>}
+            </div>
+        )
+    }
 }
 
-export default connect()(App)
+function mapStateToProps({authedUser}){
+    return {
+        loading: authedUser === null
+    }
+}
+
+
+export default connect(mapStateToProps)(App)
