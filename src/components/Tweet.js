@@ -1,6 +1,9 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {formatTweet} from '../utils/helpers'
+import { TiArrowBackOutline } from 'react-icons/ti/index'
+import { TiHeartOutline } from 'react-icons/ti/index'
+import { TiHeartFullOutline } from 'react-icons/ti/index'
 
 
 class Tweet extends Component{
