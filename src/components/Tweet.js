@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import {formatTweet} from '../utils/helpers'
+import {formatDate, formatTweet} from '../utils/helpers'
 import { TiArrowBackOutline } from 'react-icons/ti/index'
 import { TiHeartOutline } from 'react-icons/ti/index'
 import { TiHeartFullOutline } from 'react-icons/ti/index'
@@ -26,6 +26,10 @@ class Tweet extends Component{
                     alt={'Avatar of ${name}'}
                     className='avatar'
                 />
+                <div className='tweet-info'>
+                    <span>{name}</span>
+                    <div>{formatDate(timestamp)}</div>
+                </div>
             </div>
         )
     }
