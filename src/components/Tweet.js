@@ -24,7 +24,7 @@ class Tweet extends Component {
         }
 
         const {
-            name, avatar, timestamp, text, hasLiked, likes, replies, id, parent
+            name, avatar, timestamp, text, hasLiked, likes, replies, parent
         } = tweet
 
 
@@ -55,6 +55,7 @@ class Tweet extends Component {
                                 ? <TiHeartFullOutline color='#e0245e' className='tweet-icon'/>
                                 : <TiHeartOutline className='tweet-icon'/>}
                         </button>
+                        <span>{likes!==0 && likes}</span>
                     </div>
                 </div>
             </div>
