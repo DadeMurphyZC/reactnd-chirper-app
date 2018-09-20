@@ -7,6 +7,11 @@ import { TiHeartFullOutline } from 'react-icons/ti/index'
 
 
 class Tweet extends Component{
+
+    toParent = (e, id) => {
+        e.preventDefault()
+    }
+
     render(){
         const { tweet } = this.props
 
@@ -29,6 +34,11 @@ class Tweet extends Component{
                 <div className='tweet-info'>
                     <span>{name}</span>
                     <div>{formatDate(timestamp)}</div>
+                    {parent && (
+                        <button className='replying-to' onClick={(e)=> this.toParent(e, parent.id)}>
+                            Replying to @{parent.author}
+                        </button>
+                    )}
                 </div>
             </div>
         )
