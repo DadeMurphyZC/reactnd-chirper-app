@@ -35,7 +35,7 @@ class Tweet extends Component {
 
 
         return (
-            <Link to={'/tweet/${id}'} className='tweet'>
+            <Link to={`/tweet/${id}`} className='tweet'>
                 <img
                     src={avatar}
                     alt={'Avatar of ${name}'}
